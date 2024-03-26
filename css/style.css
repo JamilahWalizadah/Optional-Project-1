@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f2f2f2;
+}
+header{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 30px;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.01);
+    z-index: 100;
+}
+header .logo{
+    display: flex;
+    gap: 15px;
+}
+header .logo h1{
+    color: #1f84ef;
+    font-size: 35px;
+    font-weight: 800;
+}
+header .logo span{
+    color: #e3073c;
+}
+nav{
+    display: flex;
+    gap: 50px;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+nav a:hover{
+    background-color: #e3073c;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+input{
+    display: none;
+}
+
+/*...........ریسپانسیو نویگشن بار...........*/
+
+@media(max-width:768px){
+    nav{
+        position: absolute;
+        top: 100px;
+        background-color: #fff;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 0;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    nav a:nth-child(1){
+        margin-top: 50px;
+    }
+    label{
+        width: 45px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+    }
+    label div{
+        width: 100%;
+        height: 5px;
+        background-color: #e3073c;
+        position: absolute;
+        transform: translate(-50%);
+        border-radius: 9px;
+        transition: 0.5s;
+    }
+    label div:nth-child(1){
+        top: 0;
+    }
+    label div:nth-child(2){
+        top: 50%;
+    }
+    label div:nth-child(3){
+        top: 100%;
+    }
+    input:checked + header nav{
+        height: 100vh;
+    }
+    input:checked + header label div:nth-child(1){
+        transform: rotate(45deg);
+        top: 50%;
+    }
+    input:checked + header label div:nth-child(3){
+        transform: rotate(-45deg);
+        top: 50%;
+    }
+    input:checked + header label div:nth-child(2){
+        transform:scale(0);
+        opacity: 0;
+    }
+}
+
+/* ..........Section Categories.......... */
+
+
+.product-categories{
+    background-color: #f0f0f0;
+    display: grid;
+    justify-content: center;
+    padding-top: 120px;
+    gap: 20px;
+}
+.product-categories .product-categories-box{
+   background-color:#fff;
+   color: #e3073c;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 2);
+    border-radius:  30px; 
+}
+
+.product-categories .product-categories-box:hover{
+  transform: scale(1.06);
+}
+
+.product-categories .product-categories-box p{
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 25px;
+    opacity: 0;
+}    
+
+.product-categories .product-categories-box p:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+/* ...Section 2 ...*/ 
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    
+}
+.card{
+    width: 250px;
+    background-color:#fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    margin: 5px;
+    text-align: center;
+}
+.card:hover{
+    transform: scale(1.06);
+}
+.card .card-content img{
+    width: 100%;
+    height:220px
+}
+.card .card-content{
+    padding: 16px;
+}
+.card .card-content h3{
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+.card .card-content p{
+    color: #666;
+    font-size: 15px;
+    line-height: 1.3;
+}
+ .card .card-content button{
+    width: 100%;
+    background-color: red;
+    padding: 10px;
+    color:#fff;
+    border: navajowhite;
+    font-size: large;
+}
+.card .card-content button:hover{
+    cursor: pointer;
+}
+/* ...Section 3 ...*/ 
+
+h2{
+    margin-top: 20px;
+}
+
+.all-products{
+    width: 100%;
+    background-color: #f0f0f0;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin: 15px;
+    padding-top: 20px;
+    gap: 10px;
+}
+.all-products:hover{
+    transform: scale(1.06);
+}
+.all-products img{
+    width: 100%;
+}
+.all-products button{
+    background-color:red;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    font-size: large;
+}
+.all-products button:hover{
+    cursor: pointer;
+}
+/* ...Section 4 ...*/ 
+.product-petails{
+    width: 100%;
+    background-color: #f0f0f0;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin: 15px;
+    padding-top: 20px;
+    gap: 10px;
+}
+.product-petails img{
+    width: 100%;
+}
+.product-petails button{
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size:large;
+}
+
+/* ...Section 5 ...*/ 
+
+.title-5{
+    margin-left: 20px;
+    
+}
+
+.container-card{
+    display: grid;
+    grid-template-rows: repeat(1 ,1fr);
+    grid-template-columns: repeat(2,120px);
+    width: 100%;
+    height:auto;
+    margin: 25px;
+    text-align: center;
+    gap: 20px;
+}
+.container-card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 150px;
+    border:  dotted  2px lightgray;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center; padding: 15px 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0,1);
+    color:black;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    font-size: 20px;
+}
